@@ -36,6 +36,7 @@ module.exports = {
         {
           from: paths.src + '/assets',
           to: 'assets',
+          noErrorOnMissing: true,
         },
       ],
     }),
