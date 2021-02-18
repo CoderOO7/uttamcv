@@ -1,13 +1,35 @@
 import React, { Component } from 'react';
+import Home from '../Home/index';
+import Welcome from '../Welcome/index';
 import './index.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      userName: '',
+      isUserNameSet: false,
+    };
+
+    this.setUserName = this.setUserName.bind(this);
+  }
+
+  setUserName(userName) {
+    this.setState((prevState) => ({
+      userName,
+      isUserNameSet: !prevState.isUserNameSet,
+    }));
+  }
+
   render() {
     return (
       <div className='app'>
-        <h1 className='text-5xl font-bold text-white'>
-          My React App with Tailwind!!
-        </h1>
+        {!this.state.isUserNameSet ? (
+          <Welcome setUserName={this.setUserName} />
+        ) : (
+          <Home userName={this.state.userName} />
+        )}
       </div>
     );
   }

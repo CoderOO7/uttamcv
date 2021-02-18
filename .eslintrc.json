@@ -16,7 +16,9 @@
   "rules": {
     "semi": ["warn", "always"],
     "quotes": ["warn", "single", { "allowTemplateLiterals": true }],
+    "no-unused-vars": ["warn", {"vars": "all", "args": "after-used"}],
     "react/jsx-uses-react": "warn",
-    "react/jsx-uses-vars": "warn"
+    "react/jsx-uses-vars": "warn",
+    "react/prop-types": "off"
   }
 }
