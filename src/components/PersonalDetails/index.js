@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import EditPersonalDetails from './EditPersonalDetails/index.js';
+import styles from './index.module.css';
 
 class PersonalDetails extends Component {
   constructor(props) {
@@ -22,12 +23,14 @@ class PersonalDetails extends Component {
     const { userName } = this.props.userName;
 
     const personalDetailsTempelate = (
-      <section className='personal-details p-10'>
-        <div className='px-8 py-4 bg-white rounded-md shadow-lg'>
-          <header className='flex justify-between items-center my-4'>
-            <h6 className='font-bold'>Personal Details</h6>
+      <section className={styles.personal_details}>
+        <div className={styles.personal_details__wrapper}>
+          <header className={styles.personal_details__header}>
+            <h6 className={styles.personal_details__heading}>
+              Personal Details
+            </h6>
             <button
-              className='px-4 py-2 flex border border-black hover:text-gray-800 rounded-md'
+              className={styles.personal_details__btn}
               onClick={this.handleEditBtnClick}
             >
               <span>
@@ -45,9 +48,9 @@ class PersonalDetails extends Component {
             </button>
           </header>
           <hr />
-          <div className='flex flex-col gap-2 text-gray-700'>
-            <div className='my-4 flex items-center flex-wrap'>
-              <div className='mt-2 flex items-center justify-center bg-gray-300 h-24 w-24 mr-8 rounded-full'>
+          <div className={styles.personal_details__view}>
+            <div className={styles.personal_details__view_wrap}>
+              <div className={styles.personal_details__user_svg}>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   height='62'
@@ -62,7 +65,9 @@ class PersonalDetails extends Component {
                   />
                 </svg>
               </div>
-              <span className='py-1 font-bold'>{this.props.userName}</span>
+              <span className={styles.personal_details__user_name}>
+                {this.props.userName}
+              </span>
             </div>
             <div>Email</div>
             <div>Phone</div>

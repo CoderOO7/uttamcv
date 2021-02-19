@@ -10,10 +10,16 @@ module.exports = merge(common, {
   output: {
     filename: 'js/[name].js',
     path: paths.build,
+    pathinfo: false,
   },
-  devtool: 'inline-source-map',
+  devtool: 'eval-cheap-module-source-map',
   devServer: {
     contentBase: paths.build,
+    hot: true,
     //writeToDisk: true,
+  },
+  //improve runtime build performance
+  optimization: {
+    runtimeChunk: true,
   },
 });

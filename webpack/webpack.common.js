@@ -19,12 +19,19 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+            cacheCompression: false,
+          },
+        },
       },
       // Images: Copy image files to build folder
       { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
     ],
   },
+
   plugins: [
     //prevent deletion of assets define in CopyWebpackPlugin
     new CleanWebpackPlugin({
@@ -45,4 +52,8 @@ module.exports = {
       template: paths.src + '/index.html',
     }),
   ],
+
+  cache: {
+    type: 'filesystem',
+  },
 };

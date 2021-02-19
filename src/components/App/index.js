@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Home from '../Home/index';
 import Welcome from '../Welcome/index';
-import './index.css';
 
 class App extends Component {
   constructor(props) {

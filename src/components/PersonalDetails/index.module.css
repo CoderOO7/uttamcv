@@ -1,0 +1,67 @@
+.personal_details {
+  @apply p-10;
+}
+
+.personal_details__wrapper {
+  @apply px-8;
+  @apply py-4;
+  @apply bg-white;
+  @apply rounded-md;
+  @apply shadow-lg;
+}
+
+.personal_details__header {
+  @apply flex;
+  @apply justify-between;
+  @apply items-center;
+  @apply my-4;
+}
+
+.personal_details__heading {
+  @apply font-bold;
+  @apply text-2xl;
+}
+
+.personal_details__btn {
+  @apply px-4;
+  @apply py-2;
+  @apply flex;
+  @apply border;
+  @apply border-black;
+  @apply rounded-md;
+}
+
+.personal_details__btn:hover {
+  @apply text-gray-800;
+}
+
+.personal_details__view {
+  @apply flex;
+  @apply flex-col;
+  @apply gap-2;
+  @apply text-gray-700;
+}
+
+.personal_details__view_wrap {
+  @apply my-4;
+  @apply flex;
+  @apply items-center;
+  @apply flex-wrap;
+}
+
+.personal_details__user_svg {
+  @apply flex;
+  @apply items-center;
+  @apply justify-center;
+  @apply h-24;
+  @apply mt-2;
+  @apply w-24;
+  @apply mr-8;
+  @apply rounded-full;
+  @apply bg-gray-300;
+}
+
+.personal_details__user_name {
+  @apply py-1;
+  @apply font-bold;
+}
